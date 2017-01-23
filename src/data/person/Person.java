@@ -9,43 +9,62 @@ public class Person extends User {
 	private String firstName;
 	private String lastName;
 	private Date birthday;
-	private String PESEL;
+	private String address;
+	private String pesel;
 	
-	public Person(int id, String login, String typ_uzytkownika) {
-		super(id, login, typ_uzytkownika);
+	public Person(int id, String login, String type) {
+		super(id, login, type);
 	}
-	public Person(int id, String login, String typ_uzytkownika, String imie, String nazwisko,
-			Date data_urodzenia, String pESEL) {
-		super(id, login, typ_uzytkownika);
-		this.firstName = imie;
-		this.lastName = nazwisko;
-		this.birthday = data_urodzenia;
-		PESEL = pESEL;
+
+	public Person(int id, String login, String type, String firstName, String lastName, Date birthday, String address,
+			String pesel) {
+		super(id, login, type);
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.birthday = birthday;
+		this.address = address;
+		this.pesel = pesel;
 	}
-	
-	public String getImie() {
+
+	public String getFirstName() {
 		return firstName;
 	}
-	public void setImie(String imie) {
-		this.firstName = imie;
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-	public String getNazwisko() {
+
+	public String getLastName() {
 		return lastName;
 	}
-	public void setNazwisko(String nazwisko) {
-		this.lastName = nazwisko;
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
-	public Date getData_urodzenia() {
+
+	public Date getBirthday() {
 		return birthday;
 	}
-	public void setData_urodzenia(Date data_urodzenia) {
-		this.birthday = data_urodzenia;
+
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
-	public String getPESEL() {
-		return PESEL;
+
+	public String getAddress() {
+		return address;
 	}
-	public void setPESEL(String pESEL) {
-		PESEL = pESEL;
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
+
+	public String getPesel() {
+		return pesel;
+	}
+
+	public void setPesel(String pesel) {
+		this.pesel = pesel;
+	}
+	
 	
 }

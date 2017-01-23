@@ -11,50 +11,62 @@ public class Ticket {
 	
 	public Ticket() {
 	}
-	public Ticket(int id_biletu, Double cena, int numer_miejsca, int id_imprezy, int id_uzytkownika, int id_puli) {
-		this.id = id_biletu;
-		this.value = cena;
-		this.sitNumber = numer_miejsca;
-		this.eventiD = id_imprezy;
-		this.useriD = id_uzytkownika;
-		this.pooliD = id_puli;
+
+	public Ticket(int id, Double value, int sitNumber, int eventiD, int useriD, int pooliD) {
+		this.id = id;
+		this.value = value;
+		this.sitNumber = sitNumber;
+		this.eventiD = eventiD;
+		this.useriD = useriD;
+		this.pooliD = pooliD;
 	}
-	
-	public int getId_biletu() {
+
+	public int getId() {
 		return id;
 	}
-	public void setId_biletu(int id_biletu) {
-		this.id = id_biletu;
+
+	public void setId(int id) {
+		this.id = id;
 	}
-	public Double getCena() {
+
+	public Double getValue() {
 		return value;
 	}
-	public void setCena(Double cena) {
-		this.value = cena;
+
+	public void setValue(Double value) {
+		this.value = value;
 	}
-	public int getNumer_miejsca() {
+
+	public int getSitNumber() {
 		return sitNumber;
 	}
-	public void setNumer_miejsca(int numer_miejsca) {
-		this.sitNumber = numer_miejsca;
+
+	public void setSitNumber(int sitNumber) {
+		this.sitNumber = sitNumber;
 	}
-	public int getId_imprezy() {
+
+	public int getEventiD() {
 		return eventiD;
 	}
-	public void setId_imprezy(int id_imprezy) {
-		this.eventiD = id_imprezy;
+
+	public void setEventiD(int eventiD) {
+		this.eventiD = eventiD;
 	}
-	public int getId_uzytkownika() {
+
+	public int getUseriD() {
 		return useriD;
 	}
-	public void setId_uzytkownika(int id_uzytkownika) {
-		this.useriD = id_uzytkownika;
+
+	public void setUseriD(int useriD) {
+		this.useriD = useriD;
 	}
-	public int getId_puli() {
+
+	public int getPooliD() {
 		return pooliD;
 	}
-	public void setId_puli(int id_puli) {
-		this.pooliD = id_puli;
+
+	public void setPooliD(int pooliD) {
+		this.pooliD = pooliD;
 	}
 	
 }

@@ -18,7 +18,7 @@ public class UserParser {
 				
 				u.setId(				rs.getInt(		DB_ID));
 				u.setLogin(				rs.getString(	DB_LOGIN));
-				u.setTyp_uzytkownika(	rs.getString(	DB_TYPE));
+				u.setType(	rs.getString(	DB_TYPE));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

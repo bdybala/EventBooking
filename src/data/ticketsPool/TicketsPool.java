@@ -10,28 +10,37 @@ public class TicketsPool {
 	
 	public TicketsPool() {
 	}
-	public TicketsPool(int id_puli, int numer_puli, Date data_emisji) {
-		this.id = id_puli;
-		this.number = numer_puli;
-		this.emissionDate = data_emisji;
+
+	public TicketsPool(int id, int number, Date emissionDate) {
+		this.id = id;
+		this.number = number;
+		this.emissionDate = emissionDate;
 	}
-	
-	public int getId_puli() {
+
+	public int getId() {
 		return id;
 	}
-	public void setId_puli(int id_puli) {
-		this.id = id_puli;
+
+	public void setId(int id) {
+		this.id = id;
 	}
-	public int getNumer_puli() {
+
+	public int getNumber() {
 		return number;
 	}
-	public void setNumer_puli(int numer_puli) {
-		this.number = numer_puli;
+
+	public void setNumber(int number) {
+		this.number = number;
 	}
-	public Date getData_emisji() {
+
+	public Date getEmissionDate() {
 		return emissionDate;
 	}
-	public void setData_emisji(Date data_emisji) {
-		this.emissionDate = data_emisji;
+
+	public void setEmissionDate(Date emissionDate) {
+		this.emissionDate = emissionDate;
 	}
+	
+	
+	
 }

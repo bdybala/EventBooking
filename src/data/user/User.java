@@ -26,11 +26,11 @@ public class User {
 	public void setLogin(String login) {
 		this.login = login;
 	}
-	public String getTyp_uzytkownika() {
+	public String getType() {
 		return type;
 	}
-	public void setTyp_uzytkownika(String typ_uzytkownika) {
-		this.type = typ_uzytkownika;
+	public void setType(String type) {
+		this.type = type;
 	}
 	
 }

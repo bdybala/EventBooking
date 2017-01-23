@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <TabPane prefHeight="588.0" prefWidth="427.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Osoba prywatna">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="pLoginField" layoutX="129.0" layoutY="76.0" />
+                        <Label layoutX="129.0" layoutY="53.0" text="Login" />
+                        <Label layoutX="129.0" layoutY="108.0" text="Hasło" />
+                        <Label layoutX="129.0" layoutY="162.0" text="Powtórz hasło" />
+                        <Label layoutX="129.0" layoutY="271.0" text="Nazwisko" />
+                        <TextField fx:id="secondNameField" layoutX="129.0" layoutY="294.0" />
+                        <Label layoutX="129.0" layoutY="325.0" text="Data urodzenia" />
+                        <TextField fx:id="firstNameField" layoutX="129.0" layoutY="239.0" />
+                        <Label layoutX="129.0" layoutY="216.0" text="Imię" />
+                        <DatePicker fx:id="dateOfBirthField" layoutX="129.0" layoutY="349.0" />
+                        <Label layoutX="129.0" layoutY="436.0" text="PESEL" />
+                        <TextField fx:id="peselField" layoutX="129.0" layoutY="459.0" />
+                        <Label layoutX="129.0" layoutY="381.0" text="Adres zamieszkania" />
+                        <TextField fx:id="pAdressField" layoutX="129.0" layoutY="404.0" />
+                        <PasswordField fx:id="pPasswordField" layoutX="129.0" layoutY="131.0" />
+                        <PasswordField fx:id="pRepeatedPasswordField" layoutX="129.0" layoutY="185.0" />
+                        <Button fx:id="pRegisterButton" layoutX="125.0" layoutY="501.0" mnemonicParsing="false" text="Zarejestruj się" />
+                        <Button fx:id="pCancelButton" layoutX="233.0" layoutY="501.0" mnemonicParsing="false" text="Anuluj" />
+                        <Label layoutX="107.0" layoutY="14.0" text="Zarejestruj się jako osoba prywatna">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Firma">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="cLoginField" layoutX="128.0" layoutY="78.0" />
+                        <Label layoutX="127.0" layoutY="14.0" text="Zarejestruj się jako firma">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="128.0" layoutY="52.0" text="Login" />
+                        <PasswordField fx:id="cPasswordField" layoutX="130.0" layoutY="138.0" />
+                        <Label layoutX="130.0" layoutY="115.0" text="Hasło" />
+                        <Label layoutX="129.0" layoutY="174.0" text="Powtórz hasło" />
+                        <PasswordField fx:id="cRepeatedPasswordField" layoutX="129.0" layoutY="197.0" />
+                        <TextField fx:id="nameField" layoutX="130.0" layoutY="255.0" />
+                        <Label layoutX="130.0" layoutY="230.0" text="Nazwa firmy" />
+                        <TextField fx:id="cAdressField" layoutX="130.0" layoutY="316.0" />
+                        <Label layoutX="130.0" layoutY="291.0" text="Adres siedziby" />
+                        <Label layoutX="128.0" layoutY="352.0" text="NIP" />
+                        <TextField fx:id="nipField" layoutX="128.0" layoutY="377.0" />
+                        <Button fx:id="cRegisterButton" layoutX="124.0" layoutY="424.0" mnemonicParsing="false" text="Zarejestruj się" />
+                        <Button fx:id="cCancelButton" layoutX="237.0" layoutY="424.0" mnemonicParsing="false" text="Anuluj" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

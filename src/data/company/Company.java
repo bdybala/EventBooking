@@ -6,35 +6,42 @@ public class Company extends User {
 
 	private String name;
 	private String address;
-	private String NIP;
+	private String nip;
 	
-	public Company(int id, String login, String typ_uzytkownika) {
-		super(id, login, typ_uzytkownika);
+	public Company(int id, String login, String type) {
+		super(id, login, type);
 	}
-	public Company(int id, String login, String typ_uzytkownika, String nazwa, String adres_siedziby, String nIP) {
-		super(id, login, typ_uzytkownika);
-		this.name = nazwa;
-		this.address = adres_siedziby;
-		NIP = nIP;
+
+	public Company(int id, String login, String type, String name, String address, String nip) {
+		super(id, login, type);
+		this.name = name;
+		this.address = address;
+		this.nip = nip;
 	}
 	
-	public String getNazwa() {
+	public String getName() {
 		return name;
 	}
-	public void setNazwa(String nazwa) {
-		this.name = nazwa;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getAdres_siedziby() {
+
+	public String getAddress() {
 		return address;
 	}
-	public void setAdres_siedziby(String adres_siedziby) {
-		this.address = adres_siedziby;
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
-	public String getNIP() {
-		return NIP;
+
+	public String getNip() {
+		return nip;
 	}
-	public void setNIP(String nIP) {
-		NIP = nIP;
+
+	public void setNip(String nip) {
+		this.nip = nip;
 	}
+	
 	
 }

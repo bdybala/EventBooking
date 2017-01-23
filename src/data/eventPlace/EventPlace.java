@@ -7,37 +7,49 @@ public class EventPlace {
 	private String type;
 	private int capacity;			// nullable
 	
-	public EventPlace(int id_miejsca, String nazwa, String typ, int liczba_miejsc) {
-		this.id = id_miejsca;
-		this.name = nazwa;
-		this.type = typ;
-		this.capacity = liczba_miejsc;
-	}
 	public EventPlace() {
 	}
 	
-	public int getId_miejsca() {
+	
+	
+	public EventPlace(int id, String name, String type, int capacity) {
+		this.id = id;
+		this.name = name;
+		this.type = type;
+		this.capacity = capacity;
+	}
+
+	public int getId() {
 		return id;
 	}
-	public void setId_miejsca(int id_miejsca) {
-		this.id = id_miejsca;
+
+	public void setId(int id) {
+		this.id = id;
 	}
-	public String getNazwa() {
+
+	public String getName() {
 		return name;
 	}
-	public void setNazwa(String nazwa) {
-		this.name = nazwa;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getTyp() {
+
+	public String getType() {
 		return type;
 	}
-	public void setTyp(String typ) {
-		this.type = typ;
+
+	public void setType(String type) {
+		this.type = type;
 	}
-	public int getLiczba_miejsc() {
+
+	public int getCapacity() {
 		return capacity;
 	}
-	public void setLiczba_miejsc(int liczba_miejsc) {
-		this.capacity = liczba_miejsc;
+
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
 	}
+	
+	
 }

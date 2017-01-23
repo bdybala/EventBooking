@@ -13,72 +13,84 @@ public class Event {
 	private int placeiD;
 	private int useriD;					// nullable
 	
-	public Event(int id_imprezy, String nazwa, Date data, int ograniczenie_wiekowe, String opis, String typ,
-			int id_miejsca, int id_uzytkownika) {
-		this.id = id_imprezy;
-		this.name = nazwa;
-		this.startDate = data;
-		this.ageRestriction = ograniczenie_wiekowe;
-		this.description = opis;
-		this.type = typ;
-		this.placeiD = id_miejsca;
-		this.useriD = id_uzytkownika;
-	}
 	public Event() {
 	}
-	
-	public int getId_imprezy() {
+
+	public Event(int id, String name, Date startDate, int ageRestriction, String description, String type, int placeiD,
+			int useriD) {
+		this.id = id;
+		this.name = name;
+		this.startDate = startDate;
+		this.ageRestriction = ageRestriction;
+		this.description = description;
+		this.type = type;
+		this.placeiD = placeiD;
+		this.useriD = useriD;
+	}
+
+	public int getId() {
 		return id;
 	}
-	public void setId_imprezy(int id_imprezy) {
-		this.id = id_imprezy;
+
+	public void setId(int id) {
+		this.id = id;
 	}
-	public String getNazwa() {
+
+	public String getName() {
 		return name;
 	}
-	public void setNazwa(String nazwa) {
-		this.name = nazwa;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	public Date getData() {
+
+	public Date getStartDate() {
 		return startDate;
 	}
-	public void setData(Date data) {
-		this.startDate = data;
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
 	}
-	public int getOgraniczenie_wiekowe() {
+
+	public int getAgeRestriction() {
 		return ageRestriction;
 	}
-	public void setOgraniczenie_wiekowe(int ograniczenie_wiekowe) {
-		this.ageRestriction = ograniczenie_wiekowe;
+
+	public void setAgeRestriction(int ageRestriction) {
+		this.ageRestriction = ageRestriction;
 	}
-	public String getOpis() {
+
+	public String getDescription() {
 		return description;
 	}
-	public void setOpis(String opis) {
-		this.description = opis;
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
-	public String getTyp() {
+
+	public String getType() {
 		return type;
 	}
-	public void setTyp(String typ) {
-		this.type = typ;
+
+	public void setType(String type) {
+		this.type = type;
 	}
-	public int getId_miejsca() {
+
+	public int getPlaceiD() {
 		return placeiD;
 	}
-	public void setId_miejsca(int id_miejsca) {
-		this.placeiD = id_miejsca;
+
+	public void setPlaceiD(int placeiD) {
+		this.placeiD = placeiD;
 	}
-	public int getId_uzytkownika() {
+
+	public int getUseriD() {
 		return useriD;
 	}
-	public void setId_uzytkownika(int id_uzytkownika) {
-		this.useriD = id_uzytkownika;
+
+	public void setUseriD(int useriD) {
+		this.useriD = useriD;
 	}
-	@Override
-	public String toString() {
-		return "Event [id=" + id + ", name=" + name + ", startDate=" + startDate + ", ageRestriction=" + ageRestriction
-				+ ", description=" + description + ", type=" + type + ", placeiD=" + placeiD + ", useriD=" + useriD
-				+ "]";
-	}
+	
+	
 }

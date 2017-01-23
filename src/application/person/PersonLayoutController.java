@@ -83,9 +83,9 @@ public class PersonLayoutController implements Initializable {
 			private TilePane makeTileFromEvent(data.event.Event ev) {
 				// TODO Auto-generated method stub
 				TilePane tile = new TilePane();
-				tile.getChildren().add(new Label(ev.getNazwa()));
-				tile.getChildren().add(new Label(ev.getData().toString()));
-				tile.getChildren().add(new Label(ev.getOpis()));
+				tile.getChildren().add(new Label(ev.getName()));
+				tile.getChildren().add(new Label(ev.getStartDate().toString()));
+				tile.getChildren().add(new Label(ev.getDescription()));
 				return tile;
 			}
 		});
