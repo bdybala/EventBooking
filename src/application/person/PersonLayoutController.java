@@ -60,10 +60,13 @@ public class PersonLayoutController implements Initializable {
 			public void handle(Event event) {
 				if(eventsTab.isSelected()) {
 					ArrayList<data.event.Event> events = data.event.EventService.getAllEvents();
-
+					HBox 	hb = 		new HBox();
+					Boolean hbIsFull = 	false;
+					
 					while (!events.isEmpty()) {
-						HBox hb = new HBox();
-
+						hb = new HBox();
+						hbIsFull = false;
+						
 						for(int i = 0; i < 3; i++) {
 							if(!events.isEmpty()) {
 								data.event.Event ev = events.remove(0);
@@ -73,17 +76,49 @@ public class PersonLayoutController implements Initializable {
 								tile.setMaxWidth(
 										hb.getWidth()/3);
 								HBox.setMargin(tile, new Insets(5));
-							} else break;
-							
+							} else {
+								hbIsFull = false;
+								break;
+							}
+							hbIsFull = true;
 						}
 						
-						eventsVB.getChildren().add(hb);
+						if(hbIsFull)
+							eventsVB.getChildren().add(hb);
+						
 					}
-
+					if(hbIsFull) {
+						TilePane blank = makeBlankTile();
+						hb = new HBox();
+						hb.getChildren().add(blank);
+						eventsVB.getChildren().add(hb);
+						
+						blank.setMaxWidth(
+								hb.getWidth()/3);
+						HBox.setMargin(blank, new Insets(5));
+					} else {
+						TilePane blank = makeBlankTile();
+						hb.getChildren().add(blank);
+						eventsVB.getChildren().add(hb);
+						
+						blank.setMaxWidth(
+								hb.getWidth()/3);
+						HBox.setMargin(blank, new Insets(5));
+					}
 					
 				} else {
 					eventsVB.getChildren().clear();
 				}
+			}
+
+			private TilePane makeBlankTile() {
+				// TODO blank tile with EventHandler (make new event)
+				TilePane blank = new TilePane();
+				blank.getChildren().add(new Label("Create new event"));
+				
+				blank.setPadding(new Insets(10));
+				blank.setStyle("-fx-border-color: black;");
+				return blank;
 			}
 
 			private TilePane makeTileFromEvent(data.event.Event ev) {
