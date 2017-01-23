@@ -74,13 +74,16 @@ public class PersonLayoutController implements Initializable {
 								tile.setMaxWidth(
 										hb.getWidth()/3);
 								HBox.setMargin(tile, new Insets(5));
-							} else {
-								break;
-							}
+							} else break;
+							
 						}
+						
 						eventsVB.getChildren().add(hb);
 					}
 
+					
+				} else {
+					eventsVB.getChildren().clear();
 				}
 			}
 
