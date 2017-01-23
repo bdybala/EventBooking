@@ -66,7 +66,17 @@ public class LoginController {
 
     @FXML
     void registerEvent(ActionEvent event) {
-
+    	try {
+			Parent registerPageParent = FXMLLoader.load(
+					getClass().getResource("/application/register/registerLayout.fxml"));
+			Scene registerPageScene = new Scene(registerPageParent);
+			Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			appStage.hide();
+			appStage.setScene(registerPageScene);
+			appStage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
