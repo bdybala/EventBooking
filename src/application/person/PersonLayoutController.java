@@ -8,6 +8,8 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
@@ -67,9 +69,11 @@ public class PersonLayoutController implements Initializable {
 							if(!events.isEmpty()) {
 								data.event.Event ev = events.remove(0);
 								TilePane tile = makeTileFromEvent(ev);
+								hb.getChildren().add(tile);
+								
 								tile.setMaxWidth(
 										hb.getWidth()/3);
-								hb.getChildren().add(tile);
+								HBox.setMargin(tile, new Insets(5));
 							} else {
 								break;
 							}
@@ -86,6 +90,9 @@ public class PersonLayoutController implements Initializable {
 				tile.getChildren().add(new Label(ev.getNazwa()));
 				tile.getChildren().add(new Label(ev.getData().toString()));
 				tile.getChildren().add(new Label(ev.getOpis()));
+				
+				tile.setPadding(new Insets(10));
+				tile.setStyle("-fx-border-color: black;");
 				return tile;
 			}
 		});
