@@ -52,7 +52,6 @@ public class EventDao extends DataAccessObject {
 	public int insertEvent(Event ev) {
 		String sql = EventParser.makeInsertQuery(ev);
 		int rows = 0;
-		
 		try {
 			connectToDatabase();
 			createPreparedStatement(sql);

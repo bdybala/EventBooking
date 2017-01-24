@@ -28,6 +28,13 @@ public class Event {
 		this.useriD = useriD;
 	}
 
+	@Override
+	public String toString() {
+		return "Event [id=" + id + ", name=" + name + ", startDate=" + startDate + ", ageRestriction=" + ageRestriction
+				+ ", description=" + description + ", type=" + type + ", placeiD=" + placeiD + ", useriD=" + useriD
+				+ "]";
+	}
+
 	public int getId() {
 		return id;
 	}
