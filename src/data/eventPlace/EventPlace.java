@@ -5,6 +5,7 @@ public class EventPlace {
 	private int id;
 	private String name;
 	private String type;
+	private String address;
 	private int capacity;			// nullable
 	
 	public EventPlace() {
@@ -12,13 +13,15 @@ public class EventPlace {
 	
 	
 	
-	public EventPlace(int id, String name, String type, int capacity) {
+	public EventPlace(int id, String name, String addres, String type, int capacity) {
 		this.id = id;
 		this.name = name;
+		this.address = addres;
 		this.type = type;
 		this.capacity = capacity;
 	}
 
+	
 	public int getId() {
 		return id;
 	}
@@ -43,6 +46,14 @@ public class EventPlace {
 		this.type = type;
 	}
 
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	
 	public int getCapacity() {
 		return capacity;
 	}
