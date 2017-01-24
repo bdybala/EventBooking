@@ -1,66 +1,71 @@
 package application.event;
 
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
+
+import data.event.Event;
+import data.event.EventDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class newEventController {
 
-    @FXML
-    private ResourceBundle resources;
 
-    @FXML
-    private URL location;
+	@FXML
+	private Text scenetitle;
 
-    @FXML
-    private Text scenetitle;
+	@FXML
+	private Text titleText;
 
-    @FXML
-    private Text titleText;
+	@FXML
+	private TextField titleInput;
 
-    @FXML
-    private TextField titleInput;
+	@FXML
+	private Text dateText;
 
-    @FXML
-    private Text dateText;
+	@FXML
+	private Text ageText;
 
-    @FXML
-    private DatePicker dateInput;
+	@FXML
+	private TextField ageInput;
 
-    @FXML
-    private Text ageText;
+	@FXML
+	private Text descText;
 
-    @FXML
-    private TextField ageInput;
+	@FXML
+	private TextArea descInput;
 
-    @FXML
-    private Text descText;
+	@FXML
+	private Text typeText;
 
-    @FXML
-    private Text typeText;
+	@FXML
+	private TextField typeInput;
 
-    @FXML
-    private TextField typeInput;
+	@FXML
+	private Text placeText;
 
-    @FXML
-    private Text placeText;
+	@FXML
+	private Button addButton;
 
-    @FXML
-    private Button addButton;
+	@FXML
+	private Button cancelButton;
 
-    @FXML
-    private Button cancelButton;
+	@FXML
+	private ListView<?> listInput;
 
-    @FXML
-    private ListView<?> listInput;
-
+	@FXML
+	private TextField dateInput;
+	
     @FXML
     void cancelAdding(ActionEvent event) {
     	Stage st = (Stage) cancelButton.getScene().getWindow();
@@ -69,7 +74,35 @@ public class newEventController {
 
     @FXML
     void submitAdding(ActionEvent event) {
-
+    	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+    	Stage st = (Stage) cancelButton.getScene().getWindow();
+    	int rows = 0;
+    	
+    	// put data into variables:
+    	try {
+    		String	name = 								titleInput.getText();
+    		Date	startDate = 			sdf.parse(	dateInput.getText());
+    		int		ageRestriction = Integer.parseInt(	ageInput.getText());
+    		String	desc = 								descInput.getText();
+    		String	type = 								typeInput.getText();
+    		int		placeiD = 0;	// TODO get id from list
+    		int		useriD = 0;		// TODO get logged user's id from Session info
+    		
+    		data.event.Event ev = new data.event.Event(
+    				0, name, startDate, ageRestriction, desc, type, placeiD, useriD);
+        	
+    		EventDao dao = new EventDao();
+        	rows = dao.insertEvent(ev);
+    	} catch (ParseException e) {
+			e.printStackTrace();
+		}
+    	
+    	if(rows == 1) {
+    		// TODO succesfully added an event
+    	} else {
+    		// TODO error ?!
+    	}
+    	st.close();
     }
 
     @FXML
