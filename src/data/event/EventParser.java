@@ -82,7 +82,7 @@ public class EventParser {
 		if(desc != null) 			sql += "opis = " + 					desc + ", ";
 		if(name != null) 			sql += "nazwa = " + 				name + ", ";
 		if(place != null) 			sql += "id_miejsca = " + 			place + ", ";
-		if(startDate != null) 		sql += "data = " + 					startDate + ", ";
+		if(startDate != null) 		sql += "data = TO_DATE('" + sdf.format(startDate) + "','yyyy-mm-dd hh24:mi'), ";
 		if(type != null) 			sql += "typ = " + 					type + ", ";
 		if(user != null) 			sql += "id_uzytkownika = " + 		user + ", ";
 		sql = sql.substring(0, sql.length()-2);
