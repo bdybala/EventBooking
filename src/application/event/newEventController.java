@@ -9,6 +9,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class newEventController {
 
@@ -62,7 +63,8 @@ public class newEventController {
 
     @FXML
     void cancelAdding(ActionEvent event) {
-
+    	Stage st = (Stage) cancelButton.getScene().getWindow();
+    	st.close();
     }
 
     @FXML
