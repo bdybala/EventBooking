@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class DataAccessObject {
 
-	private static final String url = "jdbc:oracle:thin:@//localhost:1521/xe";
+	private static final String url = "jdbc:oracle:thin:@//93.180.188.108:1521/xe";
 	private static final String username = "ticket_schema";
 	private static final String password = "1234";
 	private static final String driverName = "oracle.jdbc.driver.OracleDriver";

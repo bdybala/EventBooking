@@ -7,6 +7,7 @@ package application.login;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -45,7 +46,6 @@ public class LoginController {
     @FXML
     void loginEvent(ActionEvent event) {
     	try {
-    		
     		// if login succesfull
     		if(true) {
     			Parent mainPageParent = FXMLLoader.load(
