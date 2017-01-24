@@ -5,6 +5,8 @@ import java.util.Date;
 
 public class EventService {
 
+	static EventDao eventDao = new EventDao();
+	
 	public static ArrayList<Event> getAllEvents() {
 		// TODO
 		ArrayList<Event> events = new ArrayList<>();
@@ -20,6 +22,12 @@ public class EventService {
 		
 		
 		return events;
+	}
+	
+	public static Event getEvent(int id) {
+		Event ev = eventDao.getEventById(id);
+		
+		return ev;
 	}
 
 }
