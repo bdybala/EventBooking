@@ -55,6 +55,8 @@ public class EventParser {
 				ev.setStartDate(new Date(	rs.getLong(		DB_DATE)));
 				ev.setType(					rs.getString(	DB_TYPE));
 				ev.setUseriD(				rs.getInt(		DB_USER_ID));
+				
+				eventList.add(ev);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
