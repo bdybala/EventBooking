@@ -10,13 +10,13 @@ public class Event {
 	private int ageRestriction;			// nullable
 	private String description;			// nullable
 	private String type;				// nullable
-	private int placeiD;
+	private String place;
 	private int useriD;					// nullable
 	
 	public Event() {
 	}
 
-	public Event(int id, String name, Date startDate, int ageRestriction, String description, String type, int placeiD,
+	public Event(int id, String name, Date startDate, int ageRestriction, String description, String type, String place,
 			int useriD) {
 		this.id = id;
 		this.name = name;
@@ -24,14 +24,14 @@ public class Event {
 		this.ageRestriction = ageRestriction;
 		this.description = description;
 		this.type = type;
-		this.placeiD = placeiD;
+		this.place = place;
 		this.useriD = useriD;
 	}
 
 	@Override
 	public String toString() {
 		return "Event [id=" + id + ", name=" + name + ", startDate=" + startDate + ", ageRestriction=" + ageRestriction
-				+ ", description=" + description + ", type=" + type + ", placeiD=" + placeiD + ", useriD=" + useriD
+				+ ", description=" + description + ", type=" + type + ", place=" + place + ", useriD=" + useriD
 				+ "]";
 	}
 
@@ -83,12 +83,12 @@ public class Event {
 		this.type = type;
 	}
 
-	public int getPlaceiD() {
-		return placeiD;
+	public String getPlace() {
+		return place;
 	}
 
-	public void setPlaceiD(int placeiD) {
-		this.placeiD = placeiD;
+	public void setPlace(String place) {
+		this.place = place;
 	}
 
 	public int getUseriD() {

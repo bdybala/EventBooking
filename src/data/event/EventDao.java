@@ -11,7 +11,7 @@ public class EventDao extends DataAccessObject {
 	public Event getEventById(int id) {
 		String sql = "SELECT id_imprezy, nazwa, "
 				+ "date_to_epoch(data) \"data\", ograniczenie_wiekowe, "
-				+ "opis, typ, id_uzytkownika, id_miejsca "
+				+ "opis, typ, id_uzytkownika, miejsce "
 				+ "FROM impreza WHERE id_imprezy = " + id;
 		
 		Event ev = null;
@@ -66,7 +66,7 @@ public class EventDao extends DataAccessObject {
 	}
 	
 	public int updateEvent(int id, Integer ageRestriction, String desc,
-			String name, Integer place, Long startDate, String type, Integer user) {
+			String name, String place, Long startDate, String type, Integer user) {
 		String sql = EventParser.makeUpdateQuery(id, 
 				ageRestriction, desc, name,	place, startDate, type, user);
 		int rows = 0;

@@ -89,11 +89,11 @@ public class newEventController {
 				int		ageRestriction = Integer.parseInt(	ageInput.getText());
 				String	desc = 								descInput.getText();
 				String	type = 								typeInput.getText();
-				int		placeiD = 0;	// TODO get id from list
+				String	place = 							placeInput.getText();
 				int		useriD = 0;		// TODO get logged user's id from Session info
 
 				data.event.Event ev = new data.event.Event(
-						0, name, startDate, ageRestriction, desc, type, placeiD, useriD);
+						0, name, startDate, ageRestriction, desc, type, place, useriD);
 
 				EventDao dao = new EventDao();
 				rows = dao.insertEvent(ev);

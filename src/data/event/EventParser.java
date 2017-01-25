@@ -9,14 +9,14 @@ import java.util.List;
 
 public class EventParser {
 	
-	private static final String DB_ID = "id_imprezy";
-	private static final String DB_NAME = "nazwa";
-	private static final String DB_DATE = "data";
-	private static final String DB_AGE_RESTRICTION = "ograniczenie_wiekowe";
-	private static final String DB_DESC = "opis";
-	private static final String DB_TYPE = "typ";
-	private static final String DB_USER_ID = "id_uzytkowinka";
-	private static final String DB_PLACE_ID = "id_miejsca";
+	private static final String DB_ID = 				"id_imprezy";
+	private static final String DB_NAME = 				"nazwa";
+	private static final String DB_DATE = 				"data";
+	private static final String DB_AGE_RESTRICTION = 	"ograniczenie_wiekowe";
+	private static final String DB_DESC = 				"opis";
+	private static final String DB_TYPE = 				"typ";
+	private static final String DB_USER_ID = 			"id_uzytkowinka";
+	private static final String DB_PLACE = 				"miejsce";
 
 	static Event parseEventFromResultSet(ResultSet rs) {
 		Event ev = null;
@@ -29,7 +29,7 @@ public class EventParser {
 				ev.setDescription(			rs.getString(	DB_DESC));
 				ev.setId(					rs.getInt(		DB_ID));
 				ev.setName(					rs.getString(	DB_NAME));
-				ev.setPlaceiD(				rs.getInt(		DB_PLACE_ID));
+				ev.setPlace(				rs.getString(	DB_PLACE));
 				ev.setStartDate(new Date(	rs.getLong(		DB_DATE)));
 				ev.setType(					rs.getString(	DB_TYPE));
 				ev.setUseriD(				rs.getInt(		DB_USER_ID));
@@ -51,7 +51,7 @@ public class EventParser {
 				ev.setDescription(			rs.getString(	DB_DESC));
 				ev.setId(					rs.getInt(		DB_ID));
 				ev.setName(					rs.getString(	DB_NAME));
-				ev.setPlaceiD(				rs.getInt(		DB_PLACE_ID));
+				ev.setPlace(				rs.getString(	DB_PLACE));
 				ev.setStartDate(new Date(	rs.getLong(		DB_DATE)));
 				ev.setType(					rs.getString(	DB_TYPE));
 				ev.setUseriD(				rs.getInt(		DB_USER_ID));
@@ -72,19 +72,19 @@ public class EventParser {
 				+ "TO_DATE('%s','yyyy-mm-dd hh24:mi'), "
 				+ "'%s', '%s', '%s', '%s', '%s')", 
 				ev.getName(), sdf.format(ev.getStartDate()), ev.getAgeRestriction(),
-				ev.getDescription(), ev.getType(), ev.getUseriD(), ev.getPlaceiD());
+				ev.getDescription(), ev.getType(), ev.getUseriD(), ev.getPlace());
 
 		return sql;
 	}
 
-	static String makeUpdateQuery(int id, Integer ageRestriction, String desc, String name, Integer place,
+	static String makeUpdateQuery(int id, Integer ageRestriction, String desc, String name, String place,
 			Long startDate, String type, Integer user) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		String sql ="UPDATE impreza SET ";
 		if(ageRestriction != null) 	sql += "ograniczenie_wiekowe = " + 	ageRestriction + ", ";
 		if(desc != null) 			sql += "opis = " + 					desc + ", ";
 		if(name != null) 			sql += "nazwa = " + 				name + ", ";
-		if(place != null) 			sql += "id_miejsca = " + 			place + ", ";
+		if(place != null) 			sql += "miejsce = " + 				place + ", ";
 		if(startDate != null) 		sql += "data = TO_DATE('" + sdf.format(startDate) + "','yyyy-mm-dd hh24:mi'), ";
 		if(type != null) 			sql += "typ = " + 					type + ", ";
 		if(user != null) 			sql += "id_uzytkownika = " + 		user + ", ";
