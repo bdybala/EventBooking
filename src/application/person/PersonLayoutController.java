@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -17,6 +18,12 @@ import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 
 public class PersonLayoutController implements Initializable {
+
+	private String userLogin;
+	
+	public void setUserLogin(String userLogin) {
+		this.userLogin = userLogin;
+	}
 
 	@FXML
     private TabPane tabPane;
@@ -45,10 +52,10 @@ public class PersonLayoutController implements Initializable {
     public PersonLayoutController() {
     	
 	}
-
+    
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
+				
 		try {
 			tabPane.getSelectionModel().select(accountTab);
 		} catch (Exception exc) {
@@ -58,6 +65,7 @@ public class PersonLayoutController implements Initializable {
 
 			@Override
 			public void handle(Event event) {
+				
 				if(eventsTab.isSelected()) {
 					ArrayList<data.event.Event> events = data.event.EventService.getAllEvents();
 					HBox 	hb = 		new HBox();
@@ -126,7 +134,7 @@ public class PersonLayoutController implements Initializable {
 			}
 
 			private TilePane makeTileFromEvent(data.event.Event ev) {
-				// TODO Auto-generated method stub
+
 				TilePane tile = new TilePane();
 				tile.getChildren().add(new Label(ev.getName()));
 				tile.getChildren().add(new Label(ev.getStartDate().toString()));

@@ -7,11 +7,11 @@ import data.dao.DataAccessObject;
 
 public class UserDao extends DataAccessObject {
 
-	User login(String login, String password) {
+	public User login(String login, String password) {
 		
 		String sqlQuery = "SELECT id_uzytkownika, login, haslo, typ_uzytkownika "
 				+ "FROM uzytkownik "
-				+ "WHERE login = " + login + " AND haslo = " + password;
+				+ "WHERE login = '" + login + "' AND haslo = '" + password + "'";
 		
 		ResultSet rs = null;
 		User u = null;

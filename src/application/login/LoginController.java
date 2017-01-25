@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import application.person.PersonLayoutController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -41,20 +42,39 @@ public class LoginController {
     private Button loginButton; 
 
     @FXML 
-    private Label errorLabel; 
+    private Label errorLabel;
+    
+    @FXML 
+    private Label infoLabel;
+    
+    public void setInfoLabelVisible() {
+    	infoLabel.setVisible(true);
+    }
 
     @FXML
     void loginEvent(ActionEvent event) {
     	try {
-    		// if login succesfull
-    		if(true) {
-    			Parent mainPageParent = FXMLLoader.load(
-    					getClass().getResource("/application/person/personLayout.fxml"));
+    		
+    		infoLabel.setVisible(false); 
+    		
+    		if(new data.user.UserDao().login(loginField.getText(), passwordField.getText()) != null) {
+    			
+    			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/application/person/personLayout.fxml"));     
+    			Parent mainPageParent = fxmlLoader.load();
+    			
+    			// creating PersonLayoutController
+    			PersonLayoutController controller = fxmlLoader.<PersonLayoutController>getController();
+    			
+    			// setting up user in controller
+    			controller.setUserLogin(loginField.getText());
+    			
     			Scene mainPageScene = new Scene(mainPageParent);
+    		
     			Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     			appStage.hide();
     			appStage.setScene(mainPageScene);
     			appStage.show();
+    			
     		} else {
     			errorLabel.setVisible(true);
     		}
@@ -67,6 +87,7 @@ public class LoginController {
     @FXML
     void registerEvent(ActionEvent event) {
     	try {
+    		    		
 			Parent registerPageParent = FXMLLoader.load(
 					getClass().getResource("/application/register/registerLayout.fxml"));
 			Scene registerPageScene = new Scene(registerPageParent);

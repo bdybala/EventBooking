@@ -1,16 +1,24 @@
 package application.register;
 
+import java.io.IOException;
 import java.sql.Date;
 
+import application.login.LoginController;
+import application.person.PersonLayoutController;
 import data.company.CompanyDao;
 import data.person.PersonDao;
 import data.user.UserDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class RegisterLayoutController {
 
@@ -69,7 +77,10 @@ public class RegisterLayoutController {
     private TextField nipField;
 
     @FXML
-    void registerCompany(ActionEvent event) {
+    void registerCompany(ActionEvent event) throws IOException {
+    	
+    	// TODO company data validation
+    	
     	String login = cLoginField.getText();
     	String password = cPasswordField.getText();
     	String type = "FIRMA";
@@ -78,10 +89,25 @@ public class RegisterLayoutController {
     	String nip = nipField.getText();
     	
     	new CompanyDao().registerCompany(login, password, type, name, address, nip);
+    	
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/application/login/loginLayout.fxml"));     
+		Parent loginPageParent = fxmlLoader.load();
+		LoginController controller = fxmlLoader.<LoginController>getController();
+		controller.setInfoLabelVisible();
+		
+		Scene loginPageScene = new Scene(loginPageParent);
+	
+		Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		appStage.hide();
+		appStage.setScene(loginPageScene);
+		appStage.show();
     }
     
     @FXML
-    void registerPerson(ActionEvent event) {
+    void registerPerson(ActionEvent event) throws IOException {
+    	
+    	// TODO person data validation
+    	
     	String login = pLoginField.getText();
     	String password = pPasswordField.getText();
     	String type = "OSOBA";
@@ -92,7 +118,31 @@ public class RegisterLayoutController {
     	String pesel = peselField.getText();
     	
     	new PersonDao().registerPerson(login, password, type, firstName, lastName, dateOfBirth, address, pesel);
+    	
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/application/login/loginLayout.fxml"));     
+		Parent loginPageParent = fxmlLoader.load();
+		LoginController controller = fxmlLoader.<LoginController>getController();
+		controller.setInfoLabelVisible();
+		
+		Scene loginPageScene = new Scene(loginPageParent);
+	
+		Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		appStage.hide();
+		appStage.setScene(loginPageScene);
+		appStage.show();
     }
 
+    @FXML
+    void cancelRegistration(ActionEvent event) throws IOException {
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/application/login/loginLayout.fxml"));     
+		Parent loginPageParent = fxmlLoader.load();
+		
+		Scene loginPageScene = new Scene(loginPageParent);
+	
+		Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		appStage.hide();
+		appStage.setScene(loginPageScene);
+		appStage.show();
+    }
 
 }
