@@ -63,10 +63,12 @@ public class PersonLayoutController implements Initializable {
 					HBox 	hb = 		new HBox();
 					Boolean hbIsFull = 	false;
 					
+					// while --> loop creating event tiles
 					while (!events.isEmpty()) {
 						hb = new HBox();
 						hbIsFull = false;
 						
+						// for --> loop creating one row of tiles 
 						for(int i = 0; i < 3; i++) {
 							if(!events.isEmpty()) {
 								data.event.Event ev = events.remove(0);
@@ -87,6 +89,7 @@ public class PersonLayoutController implements Initializable {
 							eventsVB.getChildren().add(hb);
 						
 					}
+					// create blank event tile
 					if(hbIsFull) {
 						TilePane blank = makeBlankTile();
 						hb = new HBox();
@@ -118,6 +121,7 @@ public class PersonLayoutController implements Initializable {
 				
 				blank.setPadding(new Insets(10));
 				blank.setStyle("-fx-border-color: black;");
+				blank.setOnMouseClicked(new newEventHandler());
 				return blank;
 			}
 

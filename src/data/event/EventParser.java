@@ -67,10 +67,11 @@ public class EventParser {
 	static String makeInsertQuery(Event ev) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		String sql = String.format("INSERT INTO impreza VALUES("
-				+ "'%s', '%s', "
+				+ "impreza_seq.nextvalue, "
+				+ "'%s', "
 				+ "TO_DATE('%s','yyyy-mm-dd hh24:mi'), "
 				+ "'%s', '%s', '%s', '%s', '%s')", 
-				ev.getId(), ev.getName(), sdf.format(ev.getStartDate()), ev.getAgeRestriction(),
+				ev.getName(), sdf.format(ev.getStartDate()), ev.getAgeRestriction(),
 				ev.getDescription(), ev.getType(), ev.getUseriD(), ev.getPlaceiD());
 
 		return sql;
