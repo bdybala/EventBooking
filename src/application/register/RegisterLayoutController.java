@@ -1,5 +1,11 @@
 package application.register;
 
+import java.sql.Date;
+
+import data.company.CompanyDao;
+import data.person.PersonDao;
+import data.user.UserDao;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -7,8 +13,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class RegisterLayoutController {
-    
-	@FXML
+
+    @FXML
     private Button pRegisterButton;
 
     @FXML
@@ -27,7 +33,7 @@ public class RegisterLayoutController {
     private TextField nameField;
 
     @FXML
-    private TextField secondNameField;
+    private TextField lastNameField;
 
     @FXML
     private TextField pAdressField;
@@ -61,5 +67,32 @@ public class RegisterLayoutController {
 
     @FXML
     private TextField nipField;
+
+    @FXML
+    void registerCompany(ActionEvent event) {
+    	String login = cLoginField.getText();
+    	String password = cPasswordField.getText();
+    	String type = "FIRMA";
+    	String name = nameField.getText();
+    	String address = cAdressField.getText();
+    	String nip = nipField.getText();
+    	
+    	new CompanyDao().registerCompany(login, password, type, name, address, nip);
+    }
     
+    @FXML
+    void registerPerson(ActionEvent event) {
+    	String login = pLoginField.getText();
+    	String password = pPasswordField.getText();
+    	String type = "OSOBA";
+    	String firstName = firstNameField.getText();
+    	String lastName = lastNameField.getText();
+    	Date dateOfBirth = Date.valueOf(dateOfBirthField.getValue());
+    	String address = pAdressField.getText();
+    	String pesel = peselField.getText();
+    	
+    	new PersonDao().registerPerson(login, password, type, firstName, lastName, dateOfBirth, address, pesel);
+    }
+
+
 }

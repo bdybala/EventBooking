@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.register.RegisterLayoutController">
    <children>
       <TabPane prefHeight="588.0" prefWidth="427.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -20,7 +19,7 @@
                         <Label layoutX="129.0" layoutY="108.0" text="Hasło" />
                         <Label layoutX="129.0" layoutY="162.0" text="Powtórz hasło" />
                         <Label layoutX="129.0" layoutY="271.0" text="Nazwisko" />
-                        <TextField fx:id="secondNameField" layoutX="129.0" layoutY="294.0" />
+                        <TextField fx:id="lastNameField" layoutX="129.0" layoutY="294.0" />
                         <Label layoutX="129.0" layoutY="325.0" text="Data urodzenia" />
                         <TextField fx:id="firstNameField" layoutX="129.0" layoutY="239.0" />
                         <Label layoutX="129.0" layoutY="216.0" text="Imię" />
@@ -31,7 +30,7 @@
                         <TextField fx:id="pAdressField" layoutX="129.0" layoutY="404.0" />
                         <PasswordField fx:id="pPasswordField" layoutX="129.0" layoutY="131.0" />
                         <PasswordField fx:id="pRepeatedPasswordField" layoutX="129.0" layoutY="185.0" />
-                        <Button fx:id="pRegisterButton" layoutX="125.0" layoutY="501.0" mnemonicParsing="false" text="Zarejestruj się" />
+                        <Button fx:id="pRegisterButton" layoutX="125.0" layoutY="501.0" mnemonicParsing="false" onAction="#registerPerson" text="Zarejestruj się" />
                         <Button fx:id="pCancelButton" layoutX="233.0" layoutY="501.0" mnemonicParsing="false" text="Anuluj" />
                         <Label layoutX="107.0" layoutY="14.0" text="Zarejestruj się jako osoba prywatna">
                            <font>
@@ -63,7 +62,7 @@
                         <Label layoutX="130.0" layoutY="291.0" text="Adres siedziby" />
                         <Label layoutX="128.0" layoutY="352.0" text="NIP" />
                         <TextField fx:id="nipField" layoutX="128.0" layoutY="377.0" />
-                        <Button fx:id="cRegisterButton" layoutX="124.0" layoutY="424.0" mnemonicParsing="false" text="Zarejestruj się" />
+                        <Button fx:id="cRegisterButton" layoutX="124.0" layoutY="424.0" mnemonicParsing="false" onAction="#registerCompany" text="Zarejestruj się" />
                         <Button fx:id="cCancelButton" layoutX="237.0" layoutY="424.0" mnemonicParsing="false" text="Anuluj" />
                      </children>
                   </AnchorPane>

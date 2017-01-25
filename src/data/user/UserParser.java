@@ -7,7 +7,7 @@ public class UserParser {
 
 	private static final String DB_ID = 		"id_uzytkownika";
 	private static final String DB_LOGIN = 		"login";
-//	private static final String DB_PASSWORD = 	"haslo";
+	private static final String DB_PASSWORD = 	"haslo";
 	private static final String DB_TYPE= 		"typ_uzytkownika";
 	
 	public static User parseUserFromResultSet(ResultSet rs) {
@@ -26,5 +26,13 @@ public class UserParser {
 		return u;
 	}
 
+
+	public static String makeInsertQuery(String login, String password, String type) {
+		String sql = String.format("INSERT INTO uzytkownik VALUES("
+				+ "uzytkownik_seq.nextval, '%s', '%s', '%s')", 
+				login, password, type);
+
+		return sql;
+	}
 	
 }

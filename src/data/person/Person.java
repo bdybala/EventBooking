@@ -12,13 +12,13 @@ public class Person extends User {
 	private String address;
 	private String pesel;
 	
-	public Person(int id, String login, String type) {
-		super(id, login, type);
+	public Person(int id, String login, String password, String type) {
+		super(id, login, password, type);
 	}
 
-	public Person(int id, String login, String type, String firstName, String lastName, Date birthday, String address,
+	public Person(int id, String login, String password, String type, String firstName, String lastName, Date birthday, String address,
 			String pesel) {
-		super(id, login, type);
+		super(id, login, password, type);
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.birthday = birthday;
