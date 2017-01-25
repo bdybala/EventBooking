@@ -17,56 +17,56 @@ import javafx.stage.Stage;
 public class newEventController {
 
 
-	   @FXML
-	    private Text scenetitle;
+	@FXML
+	private Text scenetitle;
 
-	    @FXML
-	    private Text titleText;
+	@FXML
+	private Text titleText;
 
-	    @FXML
-	    private TextField titleInput;
+	@FXML
+	private TextField titleInput;
 
-	    @FXML
-	    private Text dateText;
+	@FXML
+	private Text dateText;
 
-	    @FXML
-	    private Text errorDateFormat;
+	@FXML
+	private Text errorDateFormat;
 
-	    @FXML
-	    private TextField dateInput;
+	@FXML
+	private TextField dateInput;
 
-	    @FXML
-	    private Text ageText;
+	@FXML
+	private Text ageText;
 
-	    @FXML
-	    private Text errorAgeFormat;
+	@FXML
+	private Text errorAgeFormat;
 
-	    @FXML
-	    private TextField ageInput;
+	@FXML
+	private TextField ageInput;
 
-	    @FXML
-	    private Text descText;
+	@FXML
+	private Text descText;
 
-	    @FXML
-	    private TextArea descInput;
+	@FXML
+	private TextArea descInput;
 
-	    @FXML
-	    private Text typeText;
+	@FXML
+	private Text typeText;
 
-	    @FXML
-	    private TextField typeInput;
+	@FXML
+	private TextField typeInput;
 
-	    @FXML
-	    private Text placeText;
+	@FXML
+	private Text placeText;
 
-	    @FXML
-	    private Button addButton;
+	@FXML
+	private Button addButton;
 
-	    @FXML
-	    private Button cancelButton;
+	@FXML
+	private Button cancelButton;
 
-	    @FXML
-	    private ListView<?> listInput;
+	@FXML
+	private TextField placeInput;
 
 
 	@FXML
@@ -80,7 +80,7 @@ public class newEventController {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		Stage st = (Stage) cancelButton.getScene().getWindow();
 		int rows = 0;
-		
+
 		if (isValidDate(dateInput.getText()) && isValidInteger(ageInput.getText())) {
 			// put data into variables:
 			try {
@@ -106,7 +106,7 @@ public class newEventController {
 			} else {
 				// TODO error ?!
 			}
-			
+
 			st.close();
 		} else {
 			// wrong date format
@@ -114,52 +114,33 @@ public class newEventController {
 				this.errorDateFormat.setVisible(true);
 			else
 				this.errorDateFormat.setVisible(false);
-			
+
 			if(!isValidInteger(ageInput.getText()))
 				this.errorAgeFormat.setVisible(true);
 			else
 				this.errorAgeFormat.setVisible(false);
-			
+
 		}
-		
-	}
-
-	@FXML
-	void initialize() {
-		assert scenetitle != null : "fx:id=\"scenetitle\" was not injected: check your FXML file 'newEventLayout.fxml'.";
-		assert titleText != null : "fx:id=\"titleText\" was not injected: check your FXML file 'newEventLayout.fxml'.";
-		assert titleInput != null : "fx:id=\"titleInput\" was not injected: check your FXML file 'newEventLayout.fxml'.";
-		assert dateText != null : "fx:id=\"dateText\" was not injected: check your FXML file 'newEventLayout.fxml'.";
-		assert dateInput != null : "fx:id=\"dateInput\" was not injected: check your FXML file 'newEventLayout.fxml'.";
-		assert ageText != null : "fx:id=\"ageText\" was not injected: check your FXML file 'newEventLayout.fxml'.";
-		assert ageInput != null : "fx:id=\"ageInput\" was not injected: check your FXML file 'newEventLayout.fxml'.";
-		assert descText != null : "fx:id=\"descText\" was not injected: check your FXML file 'newEventLayout.fxml'.";
-		assert typeText != null : "fx:id=\"typeText\" was not injected: check your FXML file 'newEventLayout.fxml'.";
-		assert typeInput != null : "fx:id=\"typeInput\" was not injected: check your FXML file 'newEventLayout.fxml'.";
-		assert placeText != null : "fx:id=\"placeText\" was not injected: check your FXML file 'newEventLayout.fxml'.";
-		assert addButton != null : "fx:id=\"addButton\" was not injected: check your FXML file 'newEventLayout.fxml'.";
-		assert cancelButton != null : "fx:id=\"cancelButton\" was not injected: check your FXML file 'newEventLayout.fxml'.";
-		assert listInput != null : "fx:id=\"listInput\" was not injected: check your FXML file 'newEventLayout.fxml'.";
 
 	}
-	
+
 	public boolean isValidDate(String dateString) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-	    try {
-	        sdf.parse(dateString);
-	        return true;
-	    } catch (ParseException e) {
-	        return false;
-	    }
+		try {
+			sdf.parse(dateString);
+			return true;
+		} catch (ParseException e) {
+			return false;
+		}
 	}
-	
+
 	public boolean isValidInteger(String integerString) {
-	    try {
+		try {
 			Integer.parseInt(integerString);
 			return true;
 		} catch (NumberFormatException e) {
 			return false;
 		}
 	}
-	
+
 }

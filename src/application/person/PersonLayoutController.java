@@ -56,6 +56,7 @@ public class PersonLayoutController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 				
+		// first tab chosen: accountTab
 		try {
 			tabPane.getSelectionModel().select(accountTab);
 		} catch (Exception exc) {
