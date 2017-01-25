@@ -27,11 +27,11 @@ public class UserDao extends DataAccessObject {
 		return u;
 	}
 
-	User checkLogin(String login) {
+	public User checkLogin(String login) {
 		
 		String sqlQuery = "SELECT id_uzytkownika, login, haslo, typ_uzytkownika "
 				+ "FROM uzytkownik "
-				+ "WHERE login = " + login;
+				+ "WHERE login = '" + login + "'";
 		
 		ResultSet rs = null;
 		User u = null;

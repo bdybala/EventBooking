@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
@@ -64,6 +65,7 @@
                         <TextField fx:id="nipField" layoutX="128.0" layoutY="377.0" />
                         <Button fx:id="cRegisterButton" layoutX="124.0" layoutY="424.0" mnemonicParsing="false" onAction="#registerCompany" text="Zarejestruj się" />
                         <Button fx:id="cCancelButton" layoutX="237.0" layoutY="424.0" mnemonicParsing="false" onAction="#cancelRegistration" text="Anuluj" />
+                        <Label fx:id="cRegistrationErrors" alignment="CENTER" layoutX="1.0" layoutY="467.0" prefHeight="17.0" prefWidth="427.0" text="Label" textFill="RED" visible="false" />
                      </children>
                   </AnchorPane>
             </content>
