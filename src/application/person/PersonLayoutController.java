@@ -146,7 +146,6 @@ public class PersonLayoutController implements Initializable {
 			}
 
 			private TilePane makeBlankTile() {
-				// TODO blank tile with EventHandler (make new event)
 				TilePane blank = new TilePane();
 				blank.getChildren().add(new Label("Create new event"));
 				
@@ -162,6 +161,8 @@ public class PersonLayoutController implements Initializable {
 				tile.getChildren().add(new Label(ev.getName()));
 				tile.getChildren().add(new Label(ev.getStartDate().toString()));
 				tile.getChildren().add(new Label(ev.getDescription()));
+				
+				tile.setOnMouseClicked(new ExistingEventHandler(ev));
 				
 				tile.setPadding(new Insets(10));
 				tile.setStyle("-fx-border-color: black;");
