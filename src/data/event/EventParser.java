@@ -15,7 +15,7 @@ public class EventParser {
 	private static final String DB_AGE_RESTRICTION = 	"ograniczenie_wiekowe";
 	private static final String DB_DESC = 				"opis";
 	private static final String DB_TYPE = 				"typ";
-	private static final String DB_USER_ID = 			"id_uzytkowinka";
+	private static final String DB_USER_ID = 			"id_uzytkownika";
 	private static final String DB_PLACE = 				"miejsce";
 
 	static Event parseEventFromResultSet(ResultSet rs) {
@@ -40,7 +40,7 @@ public class EventParser {
 		return ev;
 	}
 
-	static List<Event> parseEventListFromResultSet(ResultSet rs) {
+	static ArrayList<Event> parseEventListFromResultSet(ResultSet rs) {
 		List<Event> eventList = new ArrayList<>();
 		
 		try {
@@ -61,13 +61,13 @@ public class EventParser {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return eventList;
+		return (ArrayList<Event>) eventList;
 	}
 
 	static String makeInsertQuery(Event ev) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		String sql = String.format("INSERT INTO impreza VALUES("
-				+ "impreza_seq.nextvalue, "
+				+ "impreza_seq.nextval, "
 				+ "'%s', "
 				+ "TO_DATE('%s','yyyy-mm-dd hh24:mi'), "
 				+ "'%s', '%s', '%s', '%s', '%s')", 

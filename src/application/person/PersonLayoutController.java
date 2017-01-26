@@ -1,15 +1,20 @@
 package application.person;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import application.event.newEventController;
+import data.user.User;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
@@ -20,9 +25,13 @@ import javafx.scene.layout.VBox;
 public class PersonLayoutController implements Initializable {
 
 	private String userLogin;
+	private int userID;
 	
 	public void setUserLogin(String userLogin) {
 		this.userLogin = userLogin;
+	}
+	public void setUserID(int userID) {
+		this.userID = userID;
 	}
 
 	@FXML
@@ -55,7 +64,20 @@ public class PersonLayoutController implements Initializable {
     
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-				
+		// SEND data to other layout
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/application/event/newEventLayout.fxml"));     
+		try {
+			Parent mainPageParent = fxmlLoader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		// creating PersonLayoutController
+		newEventController controller = fxmlLoader.<newEventController>getController();
+		
+		// setting up user in controller
+		controller.setUserLogin(this.userLogin);
+		controller.setUserID(this.userID);
 		// first tab chosen: accountTab
 		try {
 			tabPane.getSelectionModel().select(accountTab);

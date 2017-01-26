@@ -8,7 +8,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import application.event.newEventController;
 import application.person.PersonLayoutController;
+import data.user.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,7 +25,7 @@ import javafx.stage.Stage;
 
 public class LoginController {
 
-    @FXML 
+	@FXML 
     private ResourceBundle resources;
 
     @FXML 
@@ -56,8 +58,8 @@ public class LoginController {
     	try {
     		
     		infoLabel.setVisible(false); 
-    		
-    		if(new data.user.UserDao().login(loginField.getText(), passwordField.getText()) != null) {
+    		User user = new data.user.UserDao().login(loginField.getText(), passwordField.getText());
+    		if(user != null) {
     			
     			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/application/person/personLayout.fxml"));     
     			Parent mainPageParent = fxmlLoader.load();
@@ -67,6 +69,7 @@ public class LoginController {
     			
     			// setting up user in controller
     			controller.setUserLogin(loginField.getText());
+    			controller.setUserID(user.getId());
     			
     			Scene mainPageScene = new Scene(mainPageParent);
     		

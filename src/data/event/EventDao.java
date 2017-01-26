@@ -30,7 +30,7 @@ public class EventDao extends DataAccessObject {
 	public List<Event> getAllEvents() {
 		String sql = "SELECT id_imprezy, nazwa, "
 				+ "date_to_epoch(data) \"data\", ograniczenie_wiekowe, "
-				+ "opis, typ, id_uzytkownika, id_miejsca "
+				+ "opis, typ, id_uzytkownika, miejsce "
 				+ "FROM impreza";
 		
 		List<Event> eventList = null;
