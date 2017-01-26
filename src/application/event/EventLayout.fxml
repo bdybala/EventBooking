@@ -27,42 +27,42 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="NAZWA WYDARZENIA" GridPane.columnIndex="1" GridPane.columnSpan="2">
+            <Text fx:id="titleField" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciężarówka Coca-Cola" GridPane.columnIndex="1" GridPane.columnSpan="2">
                <font>
                   <Font name="Tahoma" size="24.0" />
                </font>
             </Text>
             <AnchorPane GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <children>
-                  <Text fx:id="dateField" layoutX="88.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATA" />
+                  <Text fx:id="dateField" layoutX="57.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2016-12-04 15:00" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <Text fx:id="organizatorField" layoutX="63.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ORGANIZATOR" textOrigin="CENTER" />
+                  <Text fx:id="organizatorField" layoutX="51.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Coca-Cola Sp. z o.o." textOrigin="CENTER" />
                </children>
             </AnchorPane>
             <AnchorPane GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <children>
-                  <Text fx:id="valueField" layoutX="91.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cena" />
+                  <Text fx:id="valueField" layoutX="84.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 PLN" />
                </children>
             </AnchorPane>
             <AnchorPane GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <children>
-                  <Text fx:id="addressField" layoutX="86.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADRES" />
+                  <Text fx:id="addressField" layoutX="51.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kraków ul. Pawia 27" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
-                  <Text layoutX="92.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Text layoutX="61.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="świąteczna trasa" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <children>
-                  <Text layoutX="92.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Text layoutX="46.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="bez limitu wiekowego" />
                </children>
             </AnchorPane>
-            <TextArea fx:id="descArea" editable="false" prefHeight="200.0" prefWidth="200.0" promptText="tu bedzie opis" wrapText="true" GridPane.columnSpan="3" GridPane.rowIndex="3" GridPane.rowSpan="2" />
+            <TextArea fx:id="descArea" editable="false" prefHeight="200.0" prefWidth="200.0" promptText="tu bedzie opis" text="Świąteczna trasa ciężarówek startuje 1 grudnia. Odwiedzi ponad 30 miast Polski. Każda taka świąteczna ciężarówka posiada 160 metrów oświetlenia ledowego z ponad sześcioma tysiącami punktów świetlnych oraz ubrana jest w 145 metrów kwadratowych czerwonej folii!&#10;&#10;Wśród atrakcji znajdzie się m.in. fabryka upominków, w której samodzielnie będzie można wykonać prezent, fotobudka, personalizacja puszek, czy wirtualna przejażdżka saniami Świętego Mikołaja.&#10;&#10;Świąteczna ciężarówka pojawi się w Krakowie 4 grudnia od godz. 15.00 do 21.00 na stadionie Wisły oraz 5 grudnia w tych samych godzinach na stadionie Cracovii." wrapText="true" GridPane.columnSpan="3" GridPane.rowIndex="3" GridPane.rowSpan="2" />
             <AnchorPane GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
             <AnchorPane GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                <children>

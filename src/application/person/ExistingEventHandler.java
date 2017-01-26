@@ -25,12 +25,19 @@ public class ExistingEventHandler implements EventHandler<MouseEvent> {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/event/EventLayout.fxml"));
 			Parent existingEventParent = loader.load();
 			Stage stage = new Stage();
+			
+			EventController controller = loader.<EventController>getController();
+			System.out.println(controller);
+			
+			
+			
 			Scene existingEventScene = new Scene(existingEventParent, Settings.EVENT_FORM_WIDTH, Settings.EVENT_FORM_HEIGHT);
 			stage.setScene(existingEventScene);
+			
+		
 			stage.show();
 
-			EventController controller = loader.<EventController>getController();
-			controller.setEvent(ev);
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
