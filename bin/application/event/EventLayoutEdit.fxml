@@ -45,7 +45,7 @@
             </AnchorPane>
             <AnchorPane GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <children>
-                  <TextField layoutX="29.0" layoutY="15.0" text="Kraków ul. Pawia 27" />
+                  <TextField layoutX="29.0" layoutY="15.0" text="Błonia krakowskie" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">

@@ -49,7 +49,7 @@
             </AnchorPane>
             <AnchorPane GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <children>
-                  <Text fx:id="addressField" layoutX="51.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kraków ul. Pawia 27" />
+                  <Text fx:id="addressField" layoutX="56.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Błonia krakowskie" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
