@@ -63,7 +63,10 @@
                </children>
             </AnchorPane>
             <TextArea fx:id="descArea" editable="false" prefHeight="200.0" prefWidth="200.0" promptText="tu bedzie opis" text="Świąteczna trasa ciężarówek startuje 1 grudnia. Odwiedzi ponad 30 miast Polski. Każda taka świąteczna ciężarówka posiada 160 metrów oświetlenia ledowego z ponad sześcioma tysiącami punktów świetlnych oraz ubrana jest w 145 metrów kwadratowych czerwonej folii!&#10;&#10;Wśród atrakcji znajdzie się m.in. fabryka upominków, w której samodzielnie będzie można wykonać prezent, fotobudka, personalizacja puszek, czy wirtualna przejażdżka saniami Świętego Mikołaja.&#10;&#10;Świąteczna ciężarówka pojawi się w Krakowie 4 grudnia od godz. 15.00 do 21.00 na stadionie Wisły oraz 5 grudnia w tych samych godzinach na stadionie Cracovii." wrapText="true" GridPane.columnSpan="3" GridPane.rowIndex="3" GridPane.rowSpan="2" />
-            <AnchorPane GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+            <AnchorPane GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+               <children>
+                  <Button disable="true" layoutX="44.0" layoutY="15.0" mnemonicParsing="false" text="Odwołaj rezerwację" />
+               </children></AnchorPane>
             <AnchorPane GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                <children>
                   <Button fx:id="buyButton" layoutX="51.0" layoutY="15.0" mnemonicParsing="false" text="Zarezerwuj bilety" />
