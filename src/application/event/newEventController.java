@@ -105,7 +105,7 @@ public class newEventController {
 				String	desc = 								descInput.getText();
 				String	type = 								typeInput.getText();
 				String	place = 							placeInput.getText();
-				int		useriD = 0; // TODO
+				int		useriD = 							this.userID;
 
 				data.event.Event ev = new data.event.Event(
 						0, name, startDate, ageRestriction, desc, type, place, useriD);
