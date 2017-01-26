@@ -156,11 +156,14 @@ public class PersonLayoutController implements Initializable {
 			}
 
 			private TilePane makeTileFromEvent(data.event.Event ev) {
-
+				String labelDesc = ev.getDescription();
+				if(labelDesc.length() > 20) {
+					labelDesc = labelDesc.substring(0, 20) + "...";
+				}
 				TilePane tile = new TilePane();
 				tile.getChildren().add(new Label(ev.getName()));
 				tile.getChildren().add(new Label(ev.getStartDate().toString()));
-				tile.getChildren().add(new Label(ev.getDescription()));
+				tile.getChildren().add(new Label(labelDesc));
 				
 				tile.setOnMouseClicked(new ExistingEventHandler(ev));
 				
