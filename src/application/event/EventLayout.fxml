@@ -69,12 +69,12 @@
                </children></AnchorPane>
             <AnchorPane GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                <children>
-                  <Button fx:id="buyButton" defaultButton="true" layoutX="51.0" layoutY="15.0" mnemonicParsing="false" text="Zarezerwuj bilety" />
+                  <Button fx:id="buyButton" defaultButton="true" layoutX="51.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleBookTicket" text="Zarezerwuj bilety" />
                </children>
             </AnchorPane>
             <AnchorPane GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                <children>
-                  <Button fx:id="backButton" cancelButton="true" layoutX="80.0" layoutY="15.0" mnemonicParsing="false" text="Cofnij" />
+                  <Button fx:id="backButton" cancelButton="true" layoutX="80.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleBackButton" text="Cofnij" />
                </children>
             </AnchorPane>
             <AnchorPane GridPane.columnIndex="2">

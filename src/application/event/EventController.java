@@ -4,10 +4,12 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import data.event.Event;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class EventController {
 
@@ -40,6 +42,17 @@ public class EventController {
 	@FXML
 	private Button backButton;
 
+	@FXML
+    void handleBackButton(ActionEvent event) {
+		Stage st = (Stage) backButton.getScene().getWindow();
+		st.close();
+    }
+
+    @FXML
+    void handleBookTicket(ActionEvent event) {
+
+    }
+    
 	@FXML
 	void initialize() {
 		assert dateField != null : "fx:id=\"dateField\" was not injected: check your FXML file 'EventLayout.fxml'.";
